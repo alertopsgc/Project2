@@ -211,7 +211,9 @@
 </style>
 
 <nav>
-  <h1>ResQ</h1>
+  <a href="/" class="resq-button">
+    <h1>ResQ</h1>
+  </a>
   <div class="nav-links">
     <a href="#hotlines">Hotlines</a>
     <a href="#about">About</a>

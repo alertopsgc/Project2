@@ -114,7 +114,7 @@
 </style>
 
 <nav>
-  <a href="/" class="resq-button">
+  <a href="/project2" class="resq-button">
     <h1>ResQ</h1>
   </a>
   <div class="nav-links">
