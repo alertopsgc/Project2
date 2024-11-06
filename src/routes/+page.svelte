@@ -1,7 +1,11 @@
-
 <script lang="ts">
-    
+  import { goto } from '$app/navigation'; // SvelteKit's navigation utility
+
+  const goToRequestPage = () => {
+    goto('/request'); // Navigates within the app without a full URL
+  };
 </script>
+
 
 <style>
   * {
@@ -19,7 +23,7 @@
 
   /* Navbar styling */
   nav {
-    background-color: #d32f2f;
+    background-color: #e63946;
     color: white;
     padding: 1rem 2rem;
     display: flex;
@@ -72,7 +76,7 @@
   }
 
   .text-section h1 span {
-    color: #d32f2f;
+    color: #e63946;
   }
 
   .text-section .subtitle {
@@ -121,7 +125,7 @@
   .circle {
     width: 300px;
     height: 300px;
-    background-color: #d32f2f;
+    background-color: #e63946;
     border-radius: 50%;
     position: absolute;
     z-index: 0;
@@ -214,7 +218,7 @@
   <div class="nav-links">
     <a href="#hotlines">Hotlines</a>
     <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+    <a href="contact">Contact</a>
   </div>
 </nav>
 
@@ -222,9 +226,12 @@
 <div class="main-content">
   <div class="text-section">
     <h1>WELCOME to <span>ResQ</span></h1>
-    <p class="subtitle">Your <span style="color: #d32f2f; font-weight: bold;">Lifeline</span> in Times of Crisis</p>
+    <p class="subtitle">Your <span style="color: #e63946; font-weight: bold;">Lifeline</span> in Times of Crisis</p>
     <p>In emergencies, every second counts. ResQ is here to connect you with the help you need, when you need it most. From natural disasters to urgent situations, we're your trusted source for quick response and vital information. Your safety is our priority, and we're just a tap away.</p>
-    <button style="margin-left: 20px;" class="emergency-btn">Emergency</button>
+    <button class="emergency-btn" on:click={goToRequestPage}>
+      Emergency
+    </button>
+    
   </div>
 
 <div class="image-section">
@@ -232,3 +239,4 @@
   <div class="stick"></div>
 </div>
 </div>
+
