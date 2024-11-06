@@ -1,9 +1,5 @@
 <script lang="ts">
-  import { goto } from '$app/navigation'; // SvelteKit's navigation utility
-
-  const goToRequestPage = () => {
-    goto('/request'); // Navigates within the app without a full URL
-  };
+  
 </script>
 
 
