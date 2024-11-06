@@ -94,21 +94,23 @@
     font-size:20px;
   }
 
-  .emergency-btn {
-    margin-top: 20px; 
-    background-color: #010832;
-    color: white;
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
 
-  .emergency-btn:hover {
-    background-color: #020a2c;
-  }
+  .emergency-btn {
+  margin-top: 20px; 
+  background-color: #010832;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: inline-block; /* Ensure it doesn't center */
+}
+
+.emergency-btn:hover {
+  background-color: #020a2c;
+}
 
   /* Circle and image styling */
   .image-section {
@@ -226,13 +228,12 @@
     <p class="subtitle">Your <span style="color: #e63946; font-weight: bold;">Lifeline</span> in Times of Crisis</p>
     <p>In emergencies, every second counts. ResQ is here to connect you with the help you need, when you need it most. From natural disasters to urgent situations, we're your trusted source for quick response and vital information. Your safety is our priority, and we're just a tap away.</p>
     <a href="request" class="emergency-btn">Emergency</a>
-
-    
   </div>
 
-<div class="image-section">
-  <div class="circle" style="top: 50; right: 90px; height: 100px weight: 150px" ></div>
-  <div class="stick"></div>
+  <div class="image-section">
+    <div class="circle" style="top: 50; right: 90px; height: 100px weight: 150px"></div>
+    <div class="stick"></div>
+  </div>
 </div>
-</div>
+
 
