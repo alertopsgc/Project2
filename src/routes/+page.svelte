@@ -95,7 +95,7 @@
   }
 
   .emergency-btn {
-    margin-top: 20px;
+    margin-top: 20px; 
     background-color: #010832;
     color: white;
     padding: 0.8rem 1.5rem;
@@ -222,10 +222,11 @@
 
 <div class="main-content">
   <div class="text-section">
-    <h1>WELCOME to <span>ResQ</span></h1>
+    <h1>Welcome to <span>ResQ</span></h1>
     <p class="subtitle">Your <span style="color: #e63946; font-weight: bold;">Lifeline</span> in Times of Crisis</p>
     <p>In emergencies, every second counts. ResQ is here to connect you with the help you need, when you need it most. From natural disasters to urgent situations, we're your trusted source for quick response and vital information. Your safety is our priority, and we're just a tap away.</p>
-    <button class="emergency-btn"> Emergency</button>
+    <a href="/request" class="emergency-btn">Emergency</a>
+
     
   </div>
 
