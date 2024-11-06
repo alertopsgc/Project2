@@ -162,7 +162,7 @@
 </style>
 
 <nav>
-  <a href="/project2" class="resq-button">
+  <a href="https://alertopsgc.github.io" class="resq-button">
     <h1>ResQ</h1>
   </a>
   <div class="nav-links">
