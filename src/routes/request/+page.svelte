@@ -94,10 +94,29 @@
   button:hover {  
     background-color: #020a2c;
   }
+  
+  .resq-button {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    transition: 0.3s;
+  }
+
+  .resq-button h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .resq-button:hover {
+    transform: scale(1.05); /* Subtle hover effect */
+  }
 </style>
 
 <nav>
-  <h1>ResQ</h1>
+  <a href="/" class="resq-button">
+    <h1>ResQ</h1>
+  </a>
   <div class="nav-links">
     <a href="#hotlines">Hotlines</a>
     <a href="#about">About</a>

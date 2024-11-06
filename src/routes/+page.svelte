@@ -3,7 +3,6 @@
     
 </script>
 
-
 <style>
   * {
     margin: 0;
@@ -94,23 +93,22 @@
     font-size:20px;
   }
 
-
   .emergency-btn {
-  margin-top: 20px; 
-  background-color: #010832;
-  color: white;
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  display: inline-block; /* Ensure it doesn't center */
-}
+    margin-top: 20px; 
+    background-color: #010832;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: inline-block;
+  }
 
-.emergency-btn:hover {
-  background-color: #020a2c;
-}
+  .emergency-btn:hover {
+    background-color: #020a2c;
+  }
 
   /* Circle and image styling */
   .image-section {
