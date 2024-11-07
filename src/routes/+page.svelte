@@ -131,23 +131,35 @@
     background-color: #020a2c;
   }
 
-  .image-section {
-    position: relative;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 300px; /* Set height for consistency */
-  }
+/* Desktop and Tablet view */
+.image-section {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px; /* Set height for consistency */
+}
 
-  .circle {
-    width: 300px;
-    height: 300px;
-    background-color: #e63946;
-    border-radius: 50%;
-    position: absolute;
-    z-index: 0;
-  }
+.circle {
+  width: 300px;
+  height: 300px;
+  background-color: #e63946;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 0;
+}
+
+.stick {
+  width: 30px;
+  height: 150px;
+  background-color: #202020;
+  border-radius: 3px;
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, 50%); /* Adjust to place it below the center of the circle */
+}
 
   .image-overlay {
     position: relative;
@@ -157,7 +169,7 @@
     transform: translate(-20px, -30px);
   }
 
-  .stick {
+  /* .stick {
     width: 30px;
     height: 150px;
     background-color: #202020;
@@ -166,7 +178,7 @@
     top: 90px;
     left: 55%;
     transform: translateX(-50%);
-  }
+  } */
 
   /* Responsive styling */
   @media (max-width: 768px) {
@@ -193,22 +205,20 @@
     }
 
     .image-section {
-      margin-top: 2rem;
-      justify-content: center;  /* Center horizontally */
-      align-items: center;      /* Center vertically */
-      height: 300px;            /* Set height for centering */
-    }
+    height: 300px; /* Set height for consistency */
+  }
 
-    .circle {
-      width: 250px;    /* Adjust the size of the circle for smaller screens */
-      height: 250px;
-      top: 0;          /* Remove the previous 'top' positioning */
-      right: 0;        /* Remove the 'right' positioning */
-    }
+  .circle {
+    width: 250px; /* Adjust the size of the circle for smaller screens */
+    height: 250px;
+    top: 60%;
+  }
 
-    .stick {
-      top: 100px;      /* Adjust stick positioning accordingly */
-    }
+  .stick {
+    bottom: -50%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+  }
 
     .nav-links {
       display: none;
@@ -235,15 +245,15 @@
     }
 
     .circle {
-      width: 200px;    /* Adjust the circle size further */
-      height: 200px;
-      top: 0;
-      right: 0;
-    }
+    width: 200px; /* Adjust the circle size further */
+    height: 200px;
+  }
 
-    .stick {
-      top: 90px;       /* Adjust stick positioning accordingly */
-    }
+  .stick {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
 
     .nav-links {
       gap: 1rem;
