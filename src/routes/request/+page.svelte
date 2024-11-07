@@ -221,7 +221,9 @@
 </style>
 
 <nav>
-  <h1>ResQ</h1>
+  <a href="/project2/">
+  <h1>ResQ</h1></a>
+  
   <div class="menu-toggle" on:click={toggleMenu}>
     <div></div>
     <div></div>
