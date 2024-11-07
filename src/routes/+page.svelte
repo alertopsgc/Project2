@@ -107,7 +107,7 @@
   }
 
   .text-section p {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.5;
     color: #555;
     margin-top: 10px;
