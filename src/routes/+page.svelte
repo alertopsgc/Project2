@@ -1,6 +1,9 @@
-
 <script>
-    
+  let isMenuOpen = false;
+
+  function toggleMenu() {
+    isMenuOpen = !isMenuOpen;
+  }
 </script>
 
 <style>
@@ -26,6 +29,7 @@
     justify-content: space-between;
     align-items: center;
     font-style: inherit;
+    position: relative;
   }
 
   nav h1 {
@@ -42,6 +46,25 @@
     color: white;
     text-decoration: none;
     font-weight: 500;
+  }
+
+  /* Toggle button for mobile */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .menu-toggle div {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    border-radius: 5px;
   }
 
   /* Main content styling */
@@ -63,12 +86,11 @@
   }
 
   .text-section h1 {
-    font-size: 5px; /* Custom font size for "WELCOME to ResQ" */
+    font-size: 55px;
     font-weight: bold;
     color: #333;
-    font-size: 55px; 
-    text-align:left;
-     margin-top:50px;
+    text-align: left;
+    margin-top: 50px;
   }
 
   .text-section h1 span {
@@ -76,25 +98,24 @@
   }
 
   .text-section .subtitle {
-    font-size: 25px; 
+    font-size: 25px;
     line-height: 1.5;
     color: #555;
     margin-top: 0;
     font-weight: normal;
     margin-left: -10px;
   }
-  
+
   .text-section p {
-    font-size: 1rem;
+    font-size: 20px;
     line-height: 1.5;
     color: #555;
     margin-top: 10px;
     margin-left: 20px;
-    font-size:20px;
   }
 
   .emergency-btn {
-    margin-top: 20px; 
+    margin-top: 20px;
     background-color: #010832;
     color: white;
     padding: 0.8rem 1.5rem;
@@ -110,13 +131,13 @@
     background-color: #020a2c;
   }
 
-  /* Circle and image styling */
   .image-section {
     position: relative;
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 300px; /* Set height for consistency */
   }
 
   .circle {
@@ -135,15 +156,16 @@
     height: auto;
     transform: translate(-20px, -30px);
   }
+
   .stick {
-  width: 30px; /* Width of the stick */
-  height: 150px; /* Height of the stick */
-  background-color: #202020; 
-  border-radius: 3px; /* Rounded edges for a more realistic stick look */
-  position: absolute;
-  top: 90px; /* Position it below the circle */
-  left: 55%; /* Center it horizontally */
-  transform: translateX(-50%); /* Offset for centering */
+    width: 30px;
+    height: 150px;
+    background-color: #202020;
+    border-radius: 3px;
+    position: absolute;
+    top: 90px;
+    left: 55%;
+    transform: translateX(-50%);
   }
 
   /* Responsive styling */
@@ -172,16 +194,57 @@
 
     .image-section {
       margin-top: 2rem;
-      justify-content: center;
+      justify-content: center;  /* Center horizontally */
+      align-items: center;      /* Center vertically */
+      height: 300px;            /* Set height for centering */
     }
 
-    .image-overlay {
-      width: 80px;
-      transform: translate(0, 0);
+    .circle {
+      width: 250px;    /* Adjust the size of the circle for smaller screens */
+      height: 250px;
+      top: 0;          /* Remove the previous 'top' positioning */
+      right: 0;        /* Remove the 'right' positioning */
+    }
+
+    .stick {
+      top: 100px;      /* Adjust stick positioning accordingly */
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .nav-links.open {
+      display: flex;
+    }
+
+    .menu-toggle {
+      display: flex;
     }
   }
 
   @media (max-width: 480px) {
+    .image-section {
+      margin-top: 2rem;
+      justify-content: center; /* Center horizontally */
+      align-items: center;     /* Center vertically */
+      height: 250px;           /* Adjust height for smaller screens */
+    }
+
+    .circle {
+      width: 200px;    /* Adjust the circle size further */
+      height: 200px;
+      top: 0;
+      right: 0;
+    }
+
+    .stick {
+      top: 90px;       /* Adjust stick positioning accordingly */
+    }
+
     .nav-links {
       gap: 1rem;
       font-size: 0.9rem;
@@ -207,7 +270,6 @@
       padding: 0.7rem 1.2rem;
       font-size: 0.9rem;
     }
-    
   }
 </style>
 
@@ -215,13 +277,17 @@
   <a href="/" class="resq-button">
     <h1>ResQ</h1>
   </a>
-  <div class="nav-links">
+  <div class="menu-toggle" on:click={toggleMenu}>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="nav-links {isMenuOpen ? 'open' : ''}">
     <a href="#hotlines">Hotlines</a>
     <a href="#about">About</a>
     <a href="contact">Contact</a>
   </div>
 </nav>
-
 
 <div class="main-content">
   <div class="text-section">
@@ -232,9 +298,7 @@
   </div>
 
   <div class="image-section">
-    <div class="circle" style="top: 50; right: 90px; height: 100px weight: 150px"></div>
+    <div class="circle"></div>
     <div class="stick"></div>
   </div>
 </div>
-
-
