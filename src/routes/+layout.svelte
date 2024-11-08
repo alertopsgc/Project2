@@ -6,7 +6,7 @@
 <style>
     /* Navbar styling */
     .navbar {
-        background-color: #D20F32;
+        background-color: #DC173A;
         padding: 1.5rem 2.5rem;
         display: flex;
         align-items: center;
