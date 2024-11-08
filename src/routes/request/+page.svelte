@@ -1,10 +1,3 @@
-<script>
-  let isMenuOpen = false;
-
-  function toggleMenu() {
-    isMenuOpen = !isMenuOpen;
-  }
-</script>
 
 <style>
   * {
@@ -17,54 +10,6 @@
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
     color: #333;
-  }
-
-  /* Navbar styling */
-  nav {
-    background-color: #e63946;
-    color: white;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-style: inherit;
-    position: relative;
-  }
-
-  nav h1 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 1.5rem;
-  }
-
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-  }
-
-  /* Toggle button for mobile */
-  .menu-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 25px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-  }
-
-  .menu-toggle div {
-    width: 30px;
-    height: 4px;
-    background-color: white;
-    border-radius: 5px;
   }
 
   /* Container for form */
@@ -152,20 +97,6 @@
 
   /* Responsive styling */
   @media (max-width: 768px) {
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      gap: 1rem;
-      align-items: center;
-    }
-
-    .nav-links.open {
-      display: flex;
-    }
-
-    .menu-toggle {
-      display: flex;
-    }
 
     .container {
       margin: 0 auto;
@@ -219,22 +150,6 @@
     }
   }
 </style>
-
-<nav>
-  <a href="/project2/">
-  <h1>ResQ</h1></a>
-  
-  <div class="menu-toggle" on:click={toggleMenu}>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-  <div class="nav-links {isMenuOpen ? 'open' : ''}">
-    <a href="#hotlines">Hotlines</a>
-    <a href="#about">About</a>
-    <a href="contact">Contact</a>
-  </div>
-</nav>
 
 <div class="container">
   <h1>What's your Emergency?</h1>

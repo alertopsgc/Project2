@@ -1,10 +1,3 @@
-<script>
-  let isMenuOpen = false;
-
-  function toggleMenu() {
-    isMenuOpen = !isMenuOpen;
-  }
-</script>
 
 <style>
   * {
@@ -18,53 +11,6 @@
     background-color: #f9f9f9;
     color: #333;
     margin-top: 50px;
-  }
-
-  /* Navbar styling */
-  nav {
-    background-color: #e63946;
-    color: white;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-style: inherit;
-    position: relative;
-  }
-
-  nav h1 {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 1.5rem;
-  }
-
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-  }
-
-  /* Toggle button for mobile */
-  .menu-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 25px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-  }
-
-  .menu-toggle div {
-    width: 30px;
-    height: 4px;
-    background-color: white;
-    border-radius: 5px;
   }
 
   /* Main content styling */
@@ -220,20 +166,6 @@
     transform: translate(-50%, 100%);
   }
 
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      gap: 1rem;
-      align-items: center;
-    }
-
-    .nav-links.open {
-      display: flex;
-    }
-
-    .menu-toggle {
-      display: flex;
-    }
   }
 
   @media (max-width: 480px) {
@@ -255,15 +187,6 @@
     transform: translate(-50%, 50%);
   }
 
-    .nav-links {
-      gap: 1rem;
-      font-size: 0.9rem;
-    }
-
-    nav h1 {
-      font-size: 1.2rem;
-    }
-
     .text-section h1 {
       font-size: 2rem;
     }
@@ -282,22 +205,6 @@
     }
   }
 </style>
-
-<nav>
-  <a href="/" class="resq-button">
-    <h1>ResQ</h1>
-  </a>
-  <div class="menu-toggle" on:click={toggleMenu}>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-  <div class="nav-links {isMenuOpen ? 'open' : ''}">
-    <a href="#hotlines">Hotlines</a>
-    <a href="#about">About</a>
-    <a href="contact">Contact</a>
-  </div>
-</nav>
 
 <div class="main-content">
   <div class="text-section">
