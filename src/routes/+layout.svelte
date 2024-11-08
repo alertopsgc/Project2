@@ -79,7 +79,7 @@
 
 <div class="navbar">
     <div class="brand">
-        <a href=" ">ResQ</a>
+        <a href="/project2/ ">ResQ</a>
     </div>
 
     <!-- Hamburger Icon (now accessible) -->
