@@ -97,12 +97,11 @@
   @media (max-width: 768px) {
     .main-content {
       flex-direction: column;
-      padding: 4rem 4rem;
+      padding-top: 7rem;
       
     }
 
     .text-section {
-      
       text-align: center;
      
     }
@@ -120,11 +119,17 @@
       font-size: 0.9rem;
     }
 
+    .image-section {
+      margin-top: 2.5rem; 
+    }
+
+
   }
 
   @media (max-width: 480px) {
+    
     .text-section {
-      padding-top: 11rem;
+      padding-top: 1.5rem;
     }
 
     .text-section h1 {
