@@ -133,7 +133,7 @@
     }
 
     .text-section h1 {
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
 
     .text-section .subtitle {
