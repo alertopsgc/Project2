@@ -1,10 +1,3 @@
-<script>
-  let isMenuOpen = false;
-
-  function toggleMenu() {
-    isMenuOpen = !isMenuOpen;
-  }
-</script>
 <style>
   /* Basic Styling */
   .container {
@@ -20,54 +13,6 @@
   .form-section,
   .info-section {
     width: 45%;
-  }
-
-  /* Navbar styling */
-  nav {
-    background-color: #e63946;
-    color: white;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-style: inherit;
-    position: relative;
-  }
-
-  nav h1 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 1.5rem;
-  }
-
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-  }
-
-  /* Toggle button for mobile */
-  .menu-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 25px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-  }
-
-  .menu-toggle div {
-    width: 30px;
-    height: 4px;
-    background-color: white;
-    border-radius: 5px;
   }
 
   h1 {
@@ -225,19 +170,6 @@
       margin-top: 2rem;
     }
 
-    .menu-toggle {
-    display: flex;  /* Show the menu toggle on small screens */
-  }
-  .nav-links {
-      display: none;
-      flex-direction: column;
-      gap: 1rem;
-      align-items: center;
-    }
-
-    .nav-links.active {
-      display: block;
-    }
   }
 
   /* Additional mobile-specific styling */
@@ -246,29 +178,11 @@
       font-size: 25px;
     }
 
-    .nav-links a {
-      font-size: 14px;
-    }
-
     button {
       padding: 0.8rem 1.5rem;
     }
   }
 </style>
-
-<nav>
-  <h1>ResQ</h1>
-  <div class="menu-toggle" on:click={toggleMenu}>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-  <div class="nav-links {isMenuOpen ? 'active' : ''}">
-    <a href="#hotlines">Hotlines</a>
-    <a href="#about">About</a>
-    <a href="contact">Contact</a>
-  </div>
-</nav>
   
 <div class="container">
   <!-- Form Section -->
