@@ -20,7 +20,7 @@
 
   /* Main content styling */
   .main-content {
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
