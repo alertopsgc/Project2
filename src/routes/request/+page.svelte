@@ -1,5 +1,5 @@
 <script>
-  const rightImage = "/imgs/3.png";
+  const rightImage = "./imgs/3.png";
 </script>
 
 <style>
