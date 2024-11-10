@@ -3,10 +3,11 @@
 	let isMenuOpen = false;
 </script>
 
+
 <style>
     /* Navbar styling */
     .navbar {
-        background-color: #DC173A;
+        background-color: #dc173a;
         padding: 1.5rem 2.5rem;
         display: flex;
         align-items: center;
@@ -98,7 +99,6 @@
     <!-- Navigation Menu -->
     <div class={`menu ${isMenuOpen ? 'open' : ''}`}>
         <a href="hotlines" class="menu-item">Hotlines</a>
-		<a href="about" class="menu-item">About</a>
         <a href="contact" class="menu-item">Contact</a>
     </div>
 </div>

@@ -1,3 +1,7 @@
+<script>
+  const rightImage = "/imgs/1.png";
+</script>
+
 <style>
   * {
     margin: 0;
@@ -9,7 +13,6 @@
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
     color: #333;
-     /* Make body take full viewport height */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,7 +39,7 @@
   .text-section h1 {
     font-size: 3rem;
     font-weight: bold;
-    color: #333;
+    color: #101010;
     line-height: 1.2;
   }
 
@@ -64,7 +67,7 @@
 
   .emergency-btn {
     margin-top: 2rem;
-    background-color: #29384B;
+    background-color: #020a2c;
     color: white;
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
@@ -76,21 +79,20 @@
   }
 
   .emergency-btn:hover {
-    background-color: #020a2c;
+    background-color: #29384B;
   }
 
   .image-section {
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
   }
 
-  .image-section div {
-    width: 300px;
-    height: 300px;
-    background-color: #e0e0e0; /* Placeholder background color */
-    border-radius: 50%;
+  .image-section img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
   }
 
   /* Responsive styling */
@@ -129,7 +131,7 @@
   @media (max-width: 480px) {
     
     .text-section {
-      padding-top: 1.5rem;
+      padding-top: 1rem;
     }
 
     .text-section h1 {
@@ -149,9 +151,13 @@
       font-size: 0.9rem;
     }
 
-    .image-section div {
-      display: none;
+    .image-section img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
     }
+
+
   }
 </style>
 
@@ -164,6 +170,6 @@
   </div>
 
   <div class="image-section">
-    <div></div> <!-- Placeholder for image or graphic -->
+    <img src={rightImage} alt="Illustration">
   </div>
 </div>
