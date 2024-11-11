@@ -133,7 +133,7 @@
   @media (max-width: 768px) {
     .main-content {
       flex-direction: column;
-      padding-top: 7rem;
+      padding-top: 3rem;
     }
 
     .text-section {

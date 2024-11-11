@@ -182,7 +182,7 @@
   /* Additional mobile-specific styling */
   @media (max-width: 480px) {
     h1 {
-      font-size: 25px;
+      font-size: 40px;
     }
 
     button {
