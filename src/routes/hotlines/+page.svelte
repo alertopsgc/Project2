@@ -3,20 +3,21 @@
 </script>
 
 <style>
-  
-   /* Header container styling */
-   .header {
+  /* Header container styling */
+  .header {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     margin-bottom: 2rem;
+    flex-wrap: nowrap; /* allows elements to wrap on smaller screens */
   }
 
   /* Title and subtitle container */
   .header-text {
     text-align: center;
     margin-right: 1rem;
+    max-width: 400px;
   }
 
   .header-text h2 {
@@ -37,13 +38,14 @@
     color: #666;
     font-size: 0.9rem;
     line-height: 1.5;
-    max-width: 400px;
     margin: 0.5rem auto 0;
   }
 
   .header img {
     width: 200px; 
     height: auto;
+    max-width: 100%; /* Ensures image doesn't exceed its container */
+    margin-top: 1rem;
   }
 
   .container {
@@ -74,11 +76,10 @@
   .hotline-header {
     background-color: #e0e0e0;
     padding: 10px 18px;
-    text-align: left;
+    text-align: center;
     font-weight: bold;
     font-size: 17px;
     color: #333;
-    flex-shrink: 0;
   }
 
   .hotline-body {
@@ -95,6 +96,57 @@
     padding: 1rem;
     font-size: 1rem;
     margin-top: 2rem;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+
+    .header img {
+      width: 150px; /* Smaller size for medium screens */
+    }
+
+    .header-text h2 {
+      font-size: 1.5rem; /* Reduce font size on smaller screens */
+    }
+
+    .header-text p.subtitle {
+      font-size: 0.9rem;
+    }
+
+    .header-text p.description {
+      font-size: 0.72rem;
+    }
+
+    .container {
+      padding: 2.5rem 2rem;
+    }
+
+  }
+
+  @media (max-width: 480px) {
+    .header img {
+      display: none;
+    }
+
+    .header-text {
+      margin-right: 0;
+    }
+
+    .header-text h2 {
+      font-size: 1.9rem;
+    }
+
+    .header-text p.subtitle {
+      font-size: 0.9rem;
+    }
+
+    .header-text p.description {
+      font-size: 0.8rem;
+    }
+
+    footer {
+      font-size: 0.9rem;
+    }
   }
 </style>
 
@@ -181,7 +233,7 @@
       </div>
     </div>
     <div class="hotline-card">
-      <div class="hotline-header">Sta Rita, Rescue, & Disaster Response</div>
+      <div class="hotline-header">Sta Rita Rescue, & Disaster Response</div>
       <div class="hotline-body">
         <p class="hotline-number">0939-956-0009 | 222-9225</p>
       </div>
@@ -193,12 +245,31 @@
       </div>
     </div>
     <div class="hotline-card">
-      <div class="hotline-header">DRRMO / OLONGAPO Rescue</div>
+      <div class="hotline-header">Olongapo City Police Office</div>
       <div class="hotline-body">
-        <p class="hotline-number">223-1415</p>
+        <p class="hotline-number">222-5731</p>
+      </div>
+    </div>
+    <div class="hotline-card">
+      <div class="hotline-header">Philippine Coast Guard</div>
+      <div class="hotline-body">
+        <p class="hotline-number">0998-585-8917</p>
+      </div>
+    </div>
+    <div class="hotline-card">
+      <div class="hotline-header">San Antonio Philippine Navy</div>
+      <div class="hotline-body">
+        <p class="hotline-number">0917-882-2347</p>
+      </div>
+    </div>
+    <div class="hotline-card">
+      <div class="hotline-header">PNP Maritime Group</div>
+      <div class="hotline-body">
+        <p class="hotline-number">0999-524-0246</p>
       </div>
     </div>
   </div>
+  
 
 </div>
 

@@ -39,8 +39,8 @@
     display: flex;
     justify-content: space-between;
     max-width: 900px;
-    margin: 2rem auto;
-    padding: 2rem;
+    margin: auto;
+    padding: 1.5rem;
     background-color: #ffffff;
     border-radius: 8px;
   }
@@ -52,7 +52,7 @@
 
   h1 {
     color: #181818;
-    font-size: 50px;
+    font-size: 48px;
     text-align: left;
     margin-bottom: 0px;
     font-weight: bolder;

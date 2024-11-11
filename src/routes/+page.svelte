@@ -34,6 +34,9 @@
     flex: 1;
     max-width: 600px;
     text-align: left;
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: fadeInLeft 1s ease forwards;
   }
 
   .text-section h1 {
@@ -74,12 +77,13 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     display: inline-block;
   }
 
   .emergency-btn:hover {
     background-color: #29384B;
+    transform: scale(1.05);
   }
 
   .image-section {
@@ -87,6 +91,10 @@
     display: flex;
     align-items: center;
     justify-content: right;
+    opacity: 0;
+    transform: translateX(30px);
+    animation: slideInRight 1s ease forwards;
+    animation-delay: 0.5s;
   }
 
   .image-section img {
@@ -95,22 +103,45 @@
     object-fit: cover;
   }
 
+  .image-section img {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image-section img:hover {
+  transform: scale(1.05);
+}
+
+  /* Keyframe animations */
+  @keyframes fadeInLeft {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
   /* Responsive styling */
   @media (max-width: 768px) {
     .main-content {
       flex-direction: column;
       padding-top: 7rem;
-      
     }
 
     .text-section {
       text-align: center;
-     
     }
 
     .text-section h1 {
       font-size: 2.5rem;
-
     }
 
     .text-section .subtitle {
@@ -124,12 +155,9 @@
     .image-section {
       margin-top: 2.5rem; 
     }
-
-
   }
 
   @media (max-width: 480px) {
-    
     .text-section {
       padding-top: 1rem;
     }
@@ -156,8 +184,6 @@
       height: 300px;
       object-fit: cover;
     }
-
-
   }
 </style>
 

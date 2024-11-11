@@ -3,7 +3,6 @@
 	let isMenuOpen = false;
 </script>
 
-
 <style>
     /* Navbar styling */
     .navbar {
@@ -13,6 +12,7 @@
         align-items: center;
         justify-content: space-between;
         position: relative;
+        z-index: 10;
     }
 
     .brand {
@@ -56,20 +56,31 @@
         .menu {
             display: none;
             flex-direction: column;
-            gap: 2rem;
+            gap: 1rem;
             position: absolute;
             top: 100%;
             left: 0;
             width: 100%;
             background-color: #D20F32;
-            padding: 2rem 2rem;
+            padding: 1.5rem;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            z-index: 10;
             text-align: center;
         }
 
         .menu.open {
             display: flex;
+            gap: 2rem;
+        }
+
+        /* Additional spacing to avoid overlap */
+        .content {
+            margin-top: 0; /* Default margin when menu is closed */
+            transition: margin-top 0.3s ease;
+        }
+
+        /* Increase margin when menu is open */
+        .content.menu-open {
+            margin-top: 200px; /* Adjust based on menu height */
         }
 
         .hamburger {
@@ -80,10 +91,10 @@
 
 <div class="navbar">
     <div class="brand">
-        <a href="./ ">ResQ</a>
+        <a href="./">ResQ</a>
     </div>
 
-    <!-- Hamburger Icon (now accessible) -->
+    <!-- Hamburger Icon -->
     <button 
         class="hamburger" 
         on:click={() => (isMenuOpen = !isMenuOpen)} 
@@ -105,4 +116,6 @@
 </div>
 
 <!-- Slot for page content -->
-<slot />
+<div class={`content ${isMenuOpen ? 'menu-open' : ''}`}>
+    <slot />
+</div>
