@@ -98,6 +98,7 @@
 
     <!-- Navigation Menu -->
     <div class={`menu ${isMenuOpen ? 'open' : ''}`}>
+        <a href="request" class="menu-item">Emergency</a>
         <a href="hotlines" class="menu-item">Hotlines</a>
         <a href="contact" class="menu-item">Contact</a>
     </div>

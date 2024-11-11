@@ -1,6 +1,24 @@
-<script>
+<script lang="ts">
   const rightImage = "./imgs/3.png";
+  let showSuccessMessage = false;
+
+  function handleSubmit(event: Event) {
+    event.preventDefault(); // Prevent page refresh on form submission
+
+    // Display the success message
+    showSuccessMessage = true;
+
+    // Hide success message after 3 seconds
+    setTimeout(() => {
+      showSuccessMessage = false;
+    }, 3000);
+
+    // Clear all input fields in the form
+    const form = event.target as HTMLFormElement;
+    form.reset();
+  }
 </script>
+
 
 <style>
   * {
@@ -163,38 +181,97 @@
       padding: 0.8rem 2rem;
     }
   }
+
+  .success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  /* Modal styling */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  .modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .modal-content h2 {
+    color: #d9534f;
+    margin-bottom: 1rem;
+  }
+
+  .modal-content p {
+    margin-bottom: 1.5rem;
+  }
+
+  .modal-content button {
+    background-color: #020a2c;
+    color: white;
+    padding: 0.8rem 2.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .modal-content button:hover {
+    background-color: #29384B;
+  }
 </style>
 
 <div class="flex-container">
   <div class="image-section">
     <img src={rightImage} alt="Illustration">
   </div>
-  
+
   <div class="container">
     <h1>What's your Emergency?</h1>
-  
-    <form>
+
+    <form on:submit={handleSubmit}>
+      <!-- <form> -->
       <div style="display: flex; gap: 1rem;">
         <div style="flex: 1;">
           <label for="first-name">First Name</label>
-          <input id="first-name" type="text" placeholder="Enter first name" />
+          <input id="first-name" type="text" placeholder="Enter first name" required />
         </div>
         <div style="flex: 1;">
           <label for="last-name">Last Name</label>
-          <input id="last-name" type="text" placeholder="Enter last name" />
+          <input id="last-name" type="text" placeholder="Enter last name" required />
         </div>
       </div>
 
       <label for="contact">Contact</label>
-      <input id="contact" type="tel" placeholder="Enter contact number" />
+      <input id="contact" type="tel" placeholder="Enter contact number" pattern="[0-9]*" inputmode="numeric" required />
 
       <label for="address">Address</label>
-      <input id="address" type="text" placeholder="Enter current location" />
+      <input id="address" type="text" placeholder="Enter current location" required />
 
       <div style="display: flex; gap: 1rem;">
         <div style="flex: 1;">
           <label for="type">Type of Emergency</label>
-          <select id="type">
+          <select id="type" required>
             <option value="">Select type</option>
             <option value="fire">Fire</option>
             <option value="medical">Medical</option>
@@ -204,7 +281,7 @@
         </div>
         <div style="flex: 1;">
           <label for="assistance">Assistance Needed</label>
-          <select id="assistance">
+          <select id="assistance" required>
             <option value="">Select assistance</option>
             <option value="ambulance">Ambulance</option>
             <option value="rescue">Rescue</option>
@@ -216,7 +293,7 @@
       <div style="display: flex; gap: 1rem;">
         <div style="flex: 1;">
           <label for="urgency">Level of Urgency</label>
-          <select id="urgency">
+          <select id="urgency" required>
             <option value="">Select urgency</option>
             <option value="high">High</option>
             <option value="medium">Medium</option>
@@ -225,12 +302,12 @@
         </div>
         <div style="flex: 1;">
           <label for="people">No. of People Affected</label>
-          <input id="people" type="number" min="1" placeholder="Enter number" />
+          <input id="people" type="number" min="1" placeholder="Enter number" required />
         </div>
       </div>
 
       <label for="datetime">Date and Time of Incident</label>
-      <input id="datetime" type="datetime-local" />
+      <input id="datetime" type="datetime-local" required />
 
       <label for="image">Attach Image</label>
       <input id="image" type="file" />
@@ -238,6 +315,27 @@
       <div class="button-container">
         <button type="submit">Submit</button>
       </div>
+
+
+      {#if showSuccessMessage}
+        <div class="success-message">
+          Your emergency report has been submitted successfully!
+        </div>
+      {/if}
+
     </form>
   </div>
 </div>
+<!-- 
+{#if showModal}
+  <Modal on:close={() => (showModal = false)}>
+    <h3 slot="header" class="text-xl font-semibold text-gray-900">Emergency Submitted</h3>
+    <div slot="default" class="text-base leading-relaxed text-gray-500">
+      Your emergency report has been submitted successfully. Help is on the way!
+    </div>
+    <div slot="footer" class="flex justify-end">
+      <button on:click={() => (showModal = false)} class="btn btn-primary">Close</button>
+    </div>
+  </Modal>
+{/if} -->
+

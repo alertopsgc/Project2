@@ -1,7 +1,35 @@
-<script>
+<script lang="ts">
   import MapPinAltSolid from "flowbite-svelte-icons/MapPinAltSolid.svelte";
   import PhoneOutline from "flowbite-svelte-icons/PhoneOutline.svelte";
   import EnvelopeSolid from "flowbite-svelte-icons/EnvelopeSolid.svelte";
+
+  let name = "";
+  let email = "";
+  let phone = "";
+  let reason = "";
+  let success = false;
+
+  // Specify the type of 'event' as 'Event'
+  function handleSubmit(event: Event) {
+    event.preventDefault(); // Prevent default form submission
+    // Reset form data
+    name = "";
+    email = "";
+    phone = "";
+    reason = "";
+
+    // Show success message
+    success = true;
+
+    // Hide success message after 5 seconds
+    setTimeout(() => {
+      success = false;
+    }, 5000);
+
+       // Clear all input fields in the form
+       const form = event.target as HTMLFormElement;
+    form.reset();
+  }
 </script>
 
 <!-- svelte-ignore css_unused_selector -->
@@ -161,6 +189,15 @@
       padding: 0.8rem 1.5rem;
     }
   }
+
+  .success-message {
+    background-color: #28a745;
+    color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
 </style>
 
 <div class="container">
@@ -169,22 +206,29 @@
     <h1>Contact Us</h1>
     <p>Your inquiries are welcome, reach out to us anytime!</p>
       
-    <form>
+    <form on:submit={handleSubmit}>
       <label for="name">Name</label>
-      <input id="name" type="text" placeholder="Enter your name" />
+      <input id="name" type="text" placeholder="Enter your name" required/>
 
       <label for="email">Email</label>
-      <input id="email" type="email" placeholder="example@gmail.com" />
+      <input id="email" type="email" placeholder="example@gmail.com" required/>
 
       <label for="phone">Phone No.</label>
-      <input id="phone" type="tel" placeholder="Enter your phone number" />
+      <input id="phone" type="tel" placeholder="Enter your phone number" pattern="[0-9]*" inputmode="numeric" required/>      
 
       <label for="reason">Reason for Contact</label>
-      <textarea id="reason" placeholder="Enter your message"></textarea>
+      <textarea id="reason" placeholder="Enter your message" required></textarea>
 
       <div class="button-container">
         <button type="submit">Send</button>
       </div>
+
+      {#if success}
+  <div class="success-message">
+    <p>Thank you for your message! We will get back to you shortly.</p>
+  </div>
+{/if}
+
     </form>
   </div>
 
